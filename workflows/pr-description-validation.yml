@@ -1,0 +1,74 @@
+name: PR Description Validation
+
+on:
+  workflow_call:
+
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  validate-pr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Validate PR Description
+        shell: bash
+        run: |
+          BODY="${{ github.event.pull_request.body }}"
+
+          echo "Validating PR Description..."
+
+          # Description must exist
+          if [ -z "$BODY" ]; then
+            echo "❌ PR description is missing."
+            exit 1
+          fi
+
+          # Required sections
+          REQUIRED_SECTIONS=(
+            "Business Requirement"
+            "Functional Changes"
+            "Acceptance Criteria"
+          )
+
+          for section in "${REQUIRED_SECTIONS[@]}"
+          do
+            if ! echo "$BODY" | grep -iq "$section"; then
+              echo "❌ Missing required section: $section"
+              exit 1
+            fi
+          done
+
+          # Business Requirement content check
+          BUSINESS_SECTION=$(echo "$BODY" | sed -n '/# Business Requirement/,/^##/p')
+
+          if [ ${#BUSINESS_SECTION} -lt 100 ]; then
+            echo "❌ Business Requirement section is too short."
+            exit 1
+          fi
+
+          # Functional Changes content check
+          FUNCTIONAL_SECTION=$(echo "$BODY" | sed -n '/# Functional Changes/,/^##/p')
+
+          if [ ${#FUNCTIONAL_SECTION} -lt 100 ]; then
+            echo "❌ Functional Changes section is too short."
+            exit 1
+          fi
+
+          # Acceptance Criteria must contain checklist items
+          AC_COUNT=$(echo "$BODY" | sed -n '/# Acceptance Criteria/,/^##/p' | grep -c "\- \[")
+
+          if [ "$AC_COUNT" -lt 1 ]; then
+            echo "❌ At least one Acceptance Criteria is required."
+            exit 1
+          fi
+
+          # Prevent placeholder text
+          if echo "$BODY" | grep -iqE "TBD|TODO|Lorem Ipsum"; then
+            echo "❌ PR description contains placeholder text."
+            exit 1
+          fi
+
+          echo "✅ PR description validation passed."
