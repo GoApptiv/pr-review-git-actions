@@ -1,6 +1,6 @@
-# Engineering Standards
+# Engineering Principles
 
-## Code Hygiene & Maintainability
+## Code Hygiene & Maintainability (Mandatory)
 
 Verify:
 
@@ -31,7 +31,7 @@ Flag:
 
 ---
 
-## Architecture & Design
+## Architecture & Design (Mandatory)
 
 Verify:
 
@@ -56,7 +56,7 @@ Flag:
 
 ---
 
-## Layer Responsibility Validation
+## Layer Responsibility Validation (Mandatory)
 
 Follow Repository Pattern strictly.
 
@@ -100,7 +100,7 @@ Should NOT:
 
 ---
 
-## Null Safety & Defensive Coding
+## Null Safety & Defensive Coding (Mandatory)
 
 Verify:
 
@@ -117,7 +117,7 @@ Flag:
 
 ---
 
-## Performance Review
+## Performance Review (Mandatory)
 
 Verify:
 
@@ -135,7 +135,7 @@ Flag:
 
 ---
 
-## Error Handling & Resilience
+## Error Handling & Resilience (Mandatory)
 
 Verify:
 
@@ -153,7 +153,7 @@ Flag:
 
 ---
 
-## API Review
+## API Review (Mandatory)
 
 Verify:
 
@@ -171,7 +171,7 @@ Flag:
 
 ---
 
-## Security
+## Security (Mandatory)
 
 Verify:
 
@@ -208,7 +208,7 @@ Flag any security vulnerabilities.
 
 ---
 
-## Database Review
+## Database Review (Mandatory)
 
 Verify:
 
@@ -237,7 +237,7 @@ Flag:
 
 ---
 
-## Observability & Logging
+## Observability & Logging (Mandatory)
 
 Verify:
 
@@ -254,7 +254,7 @@ Flag:
 
 ---
 
-## Concurrency & Data Integrity
+## Concurrency & Data Integrity (Mandatory)
 
 Verify:
 
@@ -271,7 +271,7 @@ Flag:
 
 ---
 
-## Backward Compatibility
+## Backward Compatibility (Mandatory)
 
 Verify:
 
@@ -285,17 +285,3 @@ Flag:
 - Breaking API changes
 - Contract changes
 - Risky schema changes
-
----
-
-## Testing Review
-
-Verify:
-
-- New functionality is tested
-- Existing functionality remains covered
-- Edge cases are tested
-- Permission scenarios are tested
-- Failure scenarios are tested
-
-Suggest missing test cases.

@@ -1,4 +1,4 @@
-# Functional Review Standards
+# Functional Review Principles
 
 The PR Description is mandatory and is the primary source of truth for functional review.
 
@@ -22,53 +22,6 @@ Requirements may be defined in:
 - Other clearly stated functional expectations in the PR Description
 
 All identified requirements must be validated against the implementation.
-
----
-
-## PR Description Quality Assessment
-
-Before performing functional review, assess the quality of the PR Description.
-
-### High Quality
-
-Contains:
-
-- Business Requirement
-- Functional Changes
-- Acceptance Criteria
-
-Functional Review Confidence: High
-
----
-
-### Medium Quality
-
-Contains:
-
-- Partial requirements
-- Functional expectations
-- Missing or incomplete Acceptance Criteria
-
-Functional Review Confidence: Medium
-
-Proceed with review and identify missing information.
-
----
-
-### Low Quality
-
-Contains:
-
-- Technical implementation details only
-- Generic statements such as:
-  - Bug Fix
-  - API Changes
-  - Refactoring
-  - Minor Improvements
-
-Functional Review Confidence: Low
-
-Requirement validation is limited.
 
 ---
 
@@ -122,8 +75,7 @@ For every Acceptance Criteria:
 4. Verify validations required by the Acceptance Criteria exist.
 5. Verify error handling exists where applicable.
 6. Verify edge cases related to the Acceptance Criteria are handled.
-7. Verify test coverage exists for the Acceptance Criteria.
-8. Report any missing, partial, or incorrect implementation.
+7. Report any missing, partial, or incorrect implementation.
 
 Do not assume implementation satisfies the Acceptance Criteria.
 
@@ -153,14 +105,6 @@ Identify:
 - Service Layer
 - Repository Layer (if applicable)
 
-### Test Coverage
-
-Identify:
-
-- Unit Tests
-- Feature Tests
-- Integration Tests
-
 ### Gaps
 
 List:
@@ -183,7 +127,7 @@ Implementation evidence could not be found.
 
 ---
 
-## Requirement Validation
+## Requirement Validation (Mandatory)
 
 For every identified requirement:
 
@@ -212,7 +156,6 @@ Requirement
 → Controller / API
 → Service Layer
 → Repository Layer (if applicable)
-→ Test Coverage
 
 Provide implementation evidence.
 
@@ -229,7 +172,7 @@ Implementation cannot be mapped to the requirement.
 
 ---
 
-## Requirement & Acceptance Criteria Coverage Matrix
+## Requirement & Acceptance Criteria Coverage Matrix (Mandatory)
 
 Provide a summary table:
 
@@ -251,7 +194,7 @@ Provide a summary table:
 
 ---
 
-## Requirement Coverage
+## Requirement Coverage (Mandatory)
 
 Verify:
 
@@ -270,7 +213,7 @@ Identify:
 
 ---
 
-## Business Logic Validation
+## Business Logic Validation (Mandatory)
 
 Verify:
 
@@ -293,7 +236,7 @@ Flag:
 
 ---
 
-## Edge Case Validation
+## Edge Case Validation (Mandatory)
 
 For every requirement verify handling of:
 
@@ -317,24 +260,6 @@ Identify:
 ### Missing Edge Cases
 
 - ...
-
----
-
-## Test Coverage Validation
-
-Verify test coverage exists for:
-
-- Happy Path scenarios
-- Validation failures
-- Business rule failures
-- Edge cases
-- Authorization scenarios
-- Permission scenarios
-- Negative scenarios
-- Failure scenarios
-- Regression scenarios
-
-Suggest missing test cases.
 
 ---
 

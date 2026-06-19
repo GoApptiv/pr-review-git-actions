@@ -2,7 +2,12 @@ name: PR Description Validation
 
 on:
   workflow_call:
+    inputs:
 
+      pr-number:
+        description: Pull Request Number
+        required: true
+        type: string
 
 permissions:
   contents: read
@@ -13,10 +18,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Fetch PR Details
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+        run: |
+          gh pr view \
+          ${{ inputs.pr-number }} \
+          --repo ${{ github.repository }} \
+          --json body \
+          --jq '.body // ""' \
+          > pr-body.txt
+
       - name: Validate PR Description
         shell: bash
         run: |
-          BODY="${{ github.event.pull_request.body }}"
+          BODY=$(cat pr-body.txt)
 
           echo "Validating PR Description..."
 

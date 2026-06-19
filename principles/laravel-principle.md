@@ -1,6 +1,6 @@
-# Laravel Standards
+# Laravel Principles
 
-## Naming Conventions
+## Naming Conventions (Mandatory)
 
 ### Class-Level Naming (PascalCase)
 
@@ -83,7 +83,7 @@ Flag:
 
 ---
 
-## Migration Review
+## Migration Review (Mandatory)
 
 Verify:
 
@@ -100,7 +100,7 @@ Flag:
 
 ---
 
-## Laravel Best Practices
+## Laravel Best Practices (Mandatory)
 
 Verify:
 
