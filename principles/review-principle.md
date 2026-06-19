@@ -149,7 +149,15 @@ Provide findings using the following structure:
 
 ## Acceptance Criteria Review
 
-For each Acceptance Criteria provide:
+Only include Acceptance Criteria that are:
+
+- Partially Implemented
+- Not Implemented
+- Not Verifiable
+
+Do not include Acceptance Criteria that are fully implemented.
+
+For each Acceptance Criteria requiring attention provide:
 
 ### Acceptance Criteria
 
@@ -161,14 +169,6 @@ For each Acceptance Criteria provide:
 - Partially Implemented
 - Not Implemented
 - Not Verifiable
-
-### Implementation Evidence
-
-- Validation Layer
-- Controller / API
-- Service Layer
-- Repository Layer
-- Tests
 
 ### Gaps
 

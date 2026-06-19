@@ -47,7 +47,7 @@ jobs:
           REQUIRED_SECTIONS=(
             "Business Requirement"
             "Functional Changes"
-            "Acceptance Criteria"
+            "Acceptance Criterias"
           )
 
           for section in "${REQUIRED_SECTIONS[@]}"
@@ -75,7 +75,7 @@ jobs:
           fi
 
           # Acceptance Criteria must contain checklist items
-          AC_COUNT=$(echo "$BODY" | sed -n '/# Acceptance Criteria/,/^##/p' | grep -c "\- \[")
+          AC_COUNT=$(echo "$BODY" | sed -n '/# Acceptance Criterias/,/^##/p' | grep -c "\- \[")
 
           if [ "$AC_COUNT" -lt 1 ]; then
             echo "❌ At least one Acceptance Criteria is required."
