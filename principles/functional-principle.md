@@ -83,11 +83,23 @@ Provide explicit evidence from code.
 
 ---
 
+## Acceptance Criteria Review
+
+The AI must perform two independent reviews.
+
+### Part A - Developer Acceptance Criteria
+
+Review every Acceptance Criteria explicitly provided in the PR Description.
+
 For every Acceptance Criteria provide:
 
 ### Acceptance Criteria
 
 <Acceptance Criteria>
+
+### Type
+
+Developer
 
 ### Status
 
@@ -98,21 +110,39 @@ For every Acceptance Criteria provide:
 
 ### Implementation Evidence
 
-Identify:
+Identify implementation across the application layers:
 
 - Validation Layer
 - Controller / API
 - Service Layer
 - Repository Layer (if applicable)
+- Database / Migration (if applicable)
+
+### Functional Test Cases
+
+Generate business-level functional test cases for this Acceptance Criteria.
+
+For each test case provide:
+
+| Test Scenario | Expected Result | Coverage Status |
+
+Coverage Status:
+
+- Covered
+- Partially Covered
+- Missing
 
 ### Gaps
 
-List:
+Identify:
 
 - Missing validations
-- Missing logic
-- Missing tests
+- Missing business logic
 - Missing edge case handling
+- Missing error handling
+- Missing authorization
+- Missing automated tests
+- Missing functional test coverage
 
 If an Acceptance Criteria cannot be mapped to implementation:
 
@@ -123,7 +153,116 @@ or
 Status: Not Verifiable
 
 Reason:
+
 Implementation evidence could not be found.
+
+---
+
+### Part B - AI Generated Acceptance Criteria
+
+Analyze the Business Requirement and Functional Changes.
+
+Identify important Acceptance Criteria that are reasonably implied by the business requirements but are NOT explicitly listed in the PR Description.
+
+Do NOT invent arbitrary product requirements.
+
+Generate only high-confidence Acceptance Criteria based on:
+
+- Business workflow
+- Validation rules
+- Data integrity
+- Security
+- Authorization
+- Duplicate processing
+- Boundary conditions
+- Error handling
+- Transaction consistency
+- Industry best practices
+
+Every generated Acceptance Criteria MUST be clearly marked as:
+
+Type: AI Generated
+
+For every AI Generated Acceptance Criteria provide:
+
+### Acceptance Criteria
+
+<AI Generated Acceptance Criteria>
+
+### Confidence
+
+- High
+- Medium
+
+### Reason
+
+Explain why this Acceptance Criteria is recommended.
+
+### Status
+
+- Already Implemented
+- Partially Implemented
+- Missing Implementation
+- Product Decision Required
+
+### Implementation Evidence
+
+If implementation exists, identify:
+
+- Validation Layer
+- Controller / API
+- Service Layer
+- Repository Layer
+- Database / Migration (if applicable)
+
+### Functional Test Cases
+
+Generate business-level functional test cases.
+
+For each test case provide:
+
+| Test Scenario | Expected Result | Coverage Status |
+
+Coverage Status:
+
+- Covered
+- Partially Covered
+- Missing
+
+### Recommendation
+
+One of:
+
+- Add as Acceptance Criteria
+- Discuss with Product Owner
+- Optional Enhancement
+
+---
+
+### Requirement Traceability
+
+At the end of the review generate a Requirement Traceability Matrix.
+
+| Type | Requirement / Acceptance Criteria | Implementation Status | Test Coverage | Evidence |
+
+Type:
+
+- Business Requirement
+- Developer Acceptance Criteria
+- AI Generated Acceptance Criteria
+
+Implementation Status:
+
+- Implemented
+- Partially Implemented
+- Missing
+- Not Verifiable
+
+Test Coverage:
+
+- Covered
+- Partially Covered
+- Missing
 
 ---
 

@@ -149,13 +149,16 @@ Provide findings using the following structure:
 
 ## Acceptance Criteria Review
 
-Only include Acceptance Criteria that are:
+Only include Acceptance Criteria that require attention.
+
+Do NOT include Acceptance Criteria that are fully implemented.
+
+Include:
 
 - Partially Implemented
 - Not Implemented
 - Not Verifiable
-
-Do not include Acceptance Criteria that are fully implemented.
+- AI Generated Acceptance Criteria (when important business scenarios are missing)
 
 For each Acceptance Criteria requiring attention provide:
 
@@ -163,19 +166,65 @@ For each Acceptance Criteria requiring attention provide:
 
 <Acceptance Criteria>
 
+### Type
+
+- Developer
+- AI Generated
+
 ### Status
 
-- Implemented
+Developer Acceptance Criteria:
+
 - Partially Implemented
 - Not Implemented
 - Not Verifiable
 
+AI Generated Acceptance Criteria:
+
+- Missing Implementation
+- Product Review Required
+- Already Implemented
+
+### Confidence
+
+(Only for AI Generated Acceptance Criteria)
+
+- High
+- Medium
+
+### Reason
+
+(Only for AI Generated Acceptance Criteria)
+
+Explain why this Acceptance Criteria is recommended based on the Business Requirement and Functional Changes.
+
 ### Gaps
 
+Identify all applicable gaps:
+
 - Missing validations
-- Missing logic
-- Missing tests
+- Missing business logic
+- Missing authorization
+- Missing transaction handling
+- Missing duplicate request handling
+- Missing error handling
 - Missing edge cases
+- Missing automated tests
+- Missing functional test cases
+
+### Functional Test Cases
+
+| Scenario | Expected Result | Status |
+
+Status:
+
+- Covered
+- Partially Covered
+- Missing
+
+### Recommendation
+
+Provide a concise recommendation to address the identified gaps.
 
 ---
 
