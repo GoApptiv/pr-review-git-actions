@@ -87,7 +87,7 @@ Provide explicit evidence from code.
 
 The AI must perform two independent reviews.
 
-### Part A - Developer Acceptance Criteria
+### Part A - Author Acceptance Criteria
 
 Review every Acceptance Criteria explicitly provided in the PR Description.
 
@@ -99,7 +99,7 @@ For every Acceptance Criteria provide:
 
 ### Type
 
-Developer
+Author
 
 ### Status
 
@@ -248,7 +248,7 @@ At the end of the review generate a Requirement Traceability Matrix.
 Type:
 
 - Business Requirement
-- Developer Acceptance Criteria
+- Author Acceptance Criteria
 - AI Generated Acceptance Criteria
 
 Implementation Status:
@@ -311,18 +311,13 @@ Implementation cannot be mapped to the requirement.
 
 ---
 
-## Requirement & Acceptance Criteria Coverage Matrix (Mandatory)
+## Acceptance Criteria Coverage Matrix (Mandatory)
 
 Provide a summary table:
 
-| Item | Type | Status | Validation | Logic | Tests |
-|--------|--------|--------|--------|--------|--------|
+| Item | Status | Validation | Logic | Tests |
+|--------|--------|--------|--------|--------|
 
-### Type
-
-- Business Requirement
-- Functional Change
-- Acceptance Criteria
 
 ### Status
 

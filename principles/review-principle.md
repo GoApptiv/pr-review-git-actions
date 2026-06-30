@@ -127,16 +127,15 @@ Provide findings using the following structure:
 
 ---
 
-## Requirement & Acceptance Criteria Coverage Matrix
+## Acceptance Criteria Coverage Matrix
 
 | Item | Type | Status |
 |--------|--------|--------|
 
 ### Type
 
-- Business Requirement
-- Functional Change
-- Acceptance Criteria
+- AI Generated
+- Author
 
 ### Status
 
@@ -149,17 +148,6 @@ Provide findings using the following structure:
 
 ## Acceptance Criteria Review
 
-Only include Acceptance Criteria that require attention.
-
-Do NOT include Acceptance Criteria that are fully implemented.
-
-Include:
-
-- Partially Implemented
-- Not Implemented
-- Not Verifiable
-- AI Generated Acceptance Criteria (when important business scenarios are missing)
-
 For each Acceptance Criteria requiring attention provide:
 
 ### Acceptance Criteria
@@ -168,12 +156,12 @@ For each Acceptance Criteria requiring attention provide:
 
 ### Type
 
-- Developer
+- Author
 - AI Generated
 
 ### Status
 
-Developer Acceptance Criteria:
+Author Acceptance Criteria:
 
 - Partially Implemented
 - Not Implemented
@@ -214,7 +202,7 @@ Identify all applicable gaps:
 
 ### Functional Test Cases
 
-| Scenario | Expected Result | Status |
+| Scenario | Expected Result | Status | Failure Reason |
 
 Status:
 
